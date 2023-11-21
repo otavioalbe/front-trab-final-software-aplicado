@@ -5,24 +5,21 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='style.css'>
-        <title>Login</title>
+        <title>Página do funcionário</title>
     </head>
     <body>
-        <form>
-            <h3>Login</h3>
-    
-            <h2>Usuário</h2>
-            <input type="text" id="usuario" name="usuario" placeholder="Usuário">        
-            <h2>Senha</h2>
-            <input type="password" id="senha" name="senha" placeholder="Senha">
+        <div class="box">
+            <h3>Bem-vindo</h3>
             
-
-            <h2></h2>
-            <br><br><br>
-            <button id="btnLogar" onclick="return false">Entrar</button>
-                
-        </form>
-        <script src="valida.js"></script>
+            <button id="cadastrar" onclick="return false">Cadastrar reembolso</button>
+        </div>
+        
+        <script>
+            let botao = document.getElementById('cadastrar')
+            botao.addEventListener('click',function(){
+                location.href = "cadastro.html"
+            })
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
 </html> 
