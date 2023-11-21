@@ -36,7 +36,7 @@ botao.addEventListener('click', function Login() {
         location.href = 'gerente.html'
         //alert('Login de gerente realizado com sucesso!')
     }else{
-        location.href = 'cadastro.html'
+        location.href = 'funcionario.html'
         //alert('Login de funcionário realizado com sucesso!')
     }
 
