@@ -1,7 +1,6 @@
 const formulario = document.querySelector("form");
 const Idescricao = document.querySelector(".descricao");
 const Ivalor = document.querySelector(".valor");
-const IdataSolicitacao = document.querySelector(".dataSolicitacao");
 
 function cadastrar(){
     fetch("http://localhost:8080/reembolso/solicitar",{
@@ -13,9 +12,7 @@ function cadastrar(){
         body: JSON.stringify({
             descricao: Idescricao.value,
             valor: Ivalor.value,
-            dataSolicitacao: IdataSolicitacao.value,
-            dataResposta: null,
-            status: "PENDING"
+            funcionario_id: 99,
         })
     }).then(function (res) { console.log(res)} )
     .catch(function (res) { console.log(res)} )
@@ -24,7 +21,6 @@ function cadastrar(){
 function limpar(){
     Idescricao.value = "";
     Ivalor.value = "";
-    IdataSolicitacao.value = "";
 };
 
 formulario.addEventListener("submit", function(event){

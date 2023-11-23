@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='src/css/style.css'>
+    <title>Gerenciar reembolsos</title>
+</head>
+    <body>
+        <div class="container" id="reembolsos-containers">
+            <div class="card">
+                <p>oi tapismdoipkasmdoikawmd,oipawm,odkaw,kipda,wipdmawokdmawokdmawodmaw,oidmawio</p>
+            </div>
+        </div>
+
+        <script>
+            function carregarReembolsos(){
+                fetch('http://localhost:8080/reembolso/buscar?size=100')
+                .then(response => response.json())
+                .then(reembolsos => {
+                    const container = document.getQuerySelector('#reembolsos-containers')
+
+                    reembolsos.map(reembolso => {
+                        const card = document.createElement('div')
+                        card.classList.add('card')
+
+                        const descricao = document.createElement('p')
+                        descricao.textContent = reembolso.descricao
+                        //descricao.innerHTML = reembolso.descricao
+
+                        const valor = document.createElement('p')
+                        valor.textContent = reembolso.valor
+
+                        const data_solicitacao = document.createElement('p')
+                        data_solicitacao.textContent = reembolso.data_solicitacao
+
+                        const data_resposta = document.createElement('p')
+                        data_resposta.textContent = reembolso.data_resposta
+
+                        const status = document.createElement('p')
+                        status.textContent = reembolso.status
+
+                        const funcionario_id = document.createElement('p')
+                        funcionario_id.textContent = reembolso.funcionario_id
+
+                        const motivo_recusa = document.createElement('p')
+                        motivo_recusa.textContent = reembolso.motivo_recusa
+
+
+                        card.appendChild(descricao)
+                        card.appendChild(valor)
+                        card.appendChild(data_solicitacao)
+                        card.appendChild(data_resposta)
+                        card.appendChild(status)
+                        card.appendChild(funcionario_id)
+                        card.appendChild(motivo_recusa)
+
+                        container.appendChild(card)
+                        
+                    })
+                })
+            }
+
+            carregarReembolsos()
+        </script>
+
+    </body>
+</html>
