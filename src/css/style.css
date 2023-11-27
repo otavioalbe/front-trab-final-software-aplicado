@@ -1,12 +1,29 @@
-a{
+ul {
+    display: table-row;
+    list-style: none;
+  }
+  
+  li {
+    display: table-row;
+    color: #ddd;
+  }
+    
+  li::before {
+    display: table-cell;
+    text-align: right;
+    content: "+";
+    font-size: 1em;
+    font-weight: bold;
+    color: #FF404C;
+    padding-right: 12px;
+  }
+
+a, p{
     color: #ffffff;
     text-align: center;
 }
 body{
     background-color: #080710;
-}
-p{
-    color: #ffffff;
 }
 .background{
     width: 430px;
@@ -74,14 +91,13 @@ button{
 }
 
 .box{
+    display: block;
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
     font-size: 20px;
-    height: 350px;
-    width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -108,10 +124,8 @@ h3{
 }
 
 .card{
-    border: 1px solid #ccc;
-    max-width: 150px;
-    height: 150px;
+    padding: 10px;
+    border: 5px solid #ccc;
     object-fit: cover;
     border-radius: 8px;
 }
-
