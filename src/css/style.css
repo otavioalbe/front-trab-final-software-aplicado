@@ -1,4 +1,4 @@
-ul {
+ ul {
     display: table-row;
     list-style: none;
   }
@@ -23,25 +23,19 @@ a, p, h1, h2{
     text-align: center;
     font-family: 'Poppins',sans-serif;
 }
+h3{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0px;
+    text-align: center;
+    padding: 0 0 30px 0;
+}
 header{
     margin: 5px
 }
 body{
     background-color: #080710;
 }
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-
-#repos{
-    border-bottom: 1px solid #ffffff;
-}
-
 
 form{
     height: 500px;
@@ -73,20 +67,6 @@ form h3{
     padding: 0 0 30px 0;
 }
 
-input{
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
-}
-::placeholder{
-    color: #9e9696;
-}
 button{
     margin-top: 50px;
     width: 100%;
@@ -98,6 +78,24 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+::placeholder{
+    color: #9e9696;
+}
+.container{
+    display: inline;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .boxReembolso{
     position: absolute; 
     font-family: 'Poppins',sans-serif;
@@ -109,21 +107,7 @@ button{
     width: 500px;
     left: 36%; 
 }
-.boxReembolsso{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    font-size: 20px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    height: auto;
-    width: 500px;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 300px;
-    top: 4200px; /* Para alinhar verticalmente */
-    left: 50%; /* Para alinhar horizontalmente */
-    transform: translate(-50%, -50%);
-}
+
 
 .box{
     font-family: 'Poppins',sans-serif;
@@ -147,28 +131,40 @@ button{
     overflow-y: auto;
     overflow-x: hidden;
 }
-h3{
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 0px;
-    text-align: center;
-    padding: 0 0 30px 0;
-}
 
-.container{
-    display: inline;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#reembolso{
-    margin-top: 50px;
+.inputTela{
+    display: block;
+    height: 50px;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+#repos{
+    border-bottom: 1px solid #ffffff;
+}
+
+#btnRegistrar{
+    width: 92%;
+}
+#espacoDireita{
+    width: 88%;
+}
+
+#boxReembolsoCadastro{
+    position: fixed; 
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    padding: 30px;
+    width: 500px;
+    left: 87%; 
+    height: 420px;
 }
