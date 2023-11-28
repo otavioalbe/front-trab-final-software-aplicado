@@ -51,6 +51,7 @@ botao.addEventListener('click', function Login() {
     let pegaSenha = document.getElementById('senha').value
     let validaLoginGerente = false
     let validaLoginFuncionario = false
+    let id = null;
 
 
     for(let i in gerentes){
@@ -62,6 +63,7 @@ botao.addEventListener('click', function Login() {
     for(let i in funcionarios){
         if(pegaUsuario == funcionarios[i].login && pegaSenha == funcionarios[i].senha){
             validaLoginFuncionario = true
+            id = funcionarios[i].id
             break;
         }
     }
@@ -71,6 +73,7 @@ botao.addEventListener('click', function Login() {
         //alert('Login de gerente realizado com sucesso!')
     }else if(validaLoginFuncionario == true){
         location.href = 'funcionario.html'
+        localStorage.setItem('idFuncionario', id);
         //alert('Login de funcionário realizado com sucesso!')
     }else{
         alert('Usuário ou senha incorretos!')
