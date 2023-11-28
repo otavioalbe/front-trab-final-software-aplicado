@@ -42,13 +42,6 @@ body{
     border-bottom: 1px solid #ffffff;
 }
 
-.pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    letter-spacing: 30px;
-}
 
 form{
     height: 500px;
@@ -106,6 +99,17 @@ button{
     cursor: pointer;
 }
 .boxReembolso{
+    position: absolute; 
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    padding: 30px;
+    width: 500px;
+    left: 36%; 
+}
+.boxReembolsso{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     font-size: 20px;
@@ -115,8 +119,8 @@ button{
     width: 500px;
     border-radius: 10px;
     padding: 30px;
-    margin: auto;
-    top: 350%; /* Para alinhar verticalmente */
+    margin-bottom: 300px;
+    top: 4200px; /* Para alinhar verticalmente */
     left: 50%; /* Para alinhar horizontalmente */
     transform: translate(-50%, -50%);
 }

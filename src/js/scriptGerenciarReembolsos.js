@@ -12,10 +12,10 @@ function carregarReembolsos(){
                         "<strong>Reembolso "+reembolsos.content[i].id +"</strong>")+ 
                         "<br>Descrição: " + reembolsos.content[i].descricao + 
                         "<br> - Valor: " + reembolsos.content[i].valor +
+                        "<br> - ID do funcionário: " + reembolsos.content[i].funcionarioId +
                         "<br> - Data de solicitação: " + reembolsos.content[i].dataSolicitacao +
-                        "<br> - Tipo: " + reembolsos.content[i].tipo +
-                        "<br> - Funcionario: " + reembolsos.content[i].funcionario + 
-                        "<br> - Status: " + reembolsos.content[i].status+
+                        "<br> - Data de resposta: " + reembolsos.content[i].dataResposta +
+                        "<br> - Status: " + reembolsos.content[i].status +
                         "<br> - Motivo: "+ reembolsos.content[i].motivoRecusa + "<br><br>"
                 lista.appendChild(objeto)
             }
