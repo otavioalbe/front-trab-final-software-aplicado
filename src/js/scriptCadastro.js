@@ -12,7 +12,7 @@ function cadastrar(){
         body: JSON.stringify({
             descricao: Idescricao.value,
             valor: Ivalor.value,
-            funcionario_id: 99,
+            funcionarioId: localStorage.getItem('idFuncionario'),
         })
     }).then(function (res) { console.log(res)} )
     .catch(function (res) { console.log(res)} )

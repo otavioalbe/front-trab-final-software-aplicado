@@ -64,6 +64,7 @@ botao.addEventListener('click', function Login() {
         if(pegaUsuario == funcionarios[i].login && pegaSenha == funcionarios[i].senha){
             validaLoginFuncionario = true
             id = funcionarios[i].id
+            localStorage.setItem('idFuncionario', id);
             break;
         }
     }
