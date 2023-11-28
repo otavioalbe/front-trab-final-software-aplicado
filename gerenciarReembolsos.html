@@ -19,18 +19,17 @@
             </div>
             <form id="boxReembolsoCadastro">
                 Digite o ID do reembolso:<br>
-                <input id="espacoDireita" class="inputTela" type="text" name="idReembolso" placeholder="ID do reeembolso"><br>
+                <input id="IDreembolso" class="inputTela" type="text" name="idReembolso" placeholder="ID do reeembolso"><br>
                 
                 
-                <br>
-                <input class="" type="radio" name="aprovar" value="A">Aprovar
-                <input class="" type="radio" name="aprovar" value="R">Recusar
+                <input class="ar" type="radio" name="aprovar" value="ACCEPTED">Aprovar
+                <input class="ar" type="radio" name="aprovar" value="REJECTED">Recusar
                 <br><br>
     
                 
                 Motivo:<br>
-                <input id="espacoDireita" class="inputTela" type="text" name="motivo" placeholder="Digite o motivo">
-                <br><br>
+                <input id="motivoReembolso" class="inputTela" type="text" name="motivo" placeholder="Digite o motivo">
+                <br>
 
                 <button id="btnRegistrar" onclick="return false">Registrar</button>
             </form>

@@ -24,7 +24,7 @@ function limpar(){
 };
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};
 
 formulario.addEventListener("submit", function(event){
     event.preventDefault();

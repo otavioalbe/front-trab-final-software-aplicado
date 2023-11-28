@@ -152,7 +152,10 @@ button{
 #btnRegistrar{
     width: 92%;
 }
-#espacoDireita{
+#IDreembolso{
+    width: 88%;
+}
+#motivoReembolso{
     width: 88%;
 }
 
@@ -166,5 +169,5 @@ button{
     padding: 30px;
     width: 500px;
     left: 87%; 
-    height: 420px;
+    height: 400px;
 }
