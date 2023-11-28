@@ -22,11 +22,16 @@ function limpar(){
     Idescricao.value = "";
     Ivalor.value = "";
 };
-var i = 0
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 formulario.addEventListener("submit", function(event){
     event.preventDefault();
+    if(!(isNumber(Ivalor.value))){
+        alert("O valor digitado deve ser apenas números!")
+        return;
+    }
     cadastrar();
-    i++;
-    localStorage.setItem('cadastro++', i);
     limpar();
 });
