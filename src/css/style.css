@@ -18,9 +18,13 @@ ul {
     padding-right: 12px;
   }
 
-a, p{
+a, p, h1, h2{
     color: #ffffff;
     text-align: center;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    margin: 5px
 }
 body{
     background-color: #080710;
@@ -32,6 +36,18 @@ body{
     transform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
+}
+
+#repos{
+    border-bottom: 1px solid #ffffff;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    letter-spacing: 30px;
 }
 
 form{
@@ -76,11 +92,11 @@ input{
     font-weight: 300;
 }
 ::placeholder{
-    color: #e5e5e5;
+    color: #9e9696;
 }
 button{
     margin-top: 50px;
-    width: 104%;
+    width: 100%;
     background-color: #ffffff;
     color: #080710;
     padding: 15px 0;
@@ -89,15 +105,31 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+.boxReembolso{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    height: auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 30px;
+    margin: auto;
+    top: 350%; /* Para alinhar verticalmente */
+    left: 50%; /* Para alinhar horizontalmente */
+    transform: translate(-50%, -50%);
+}
 
 .box{
-    display: block;
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
     font-size: 20px;
+    height: auto;
+    width: 500px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -108,6 +140,8 @@ button{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 30px 50px 70px 35px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 h3{
     font-size: 32px;
@@ -118,14 +152,8 @@ h3{
 }
 
 .container{
-    display: flex;
+    display: inline;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.card{
-    padding: 10px;
-    border: 5px solid #ccc;
-    object-fit: cover;
-    border-radius: 8px;
-}

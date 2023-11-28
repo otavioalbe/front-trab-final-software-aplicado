@@ -22,9 +22,11 @@ function limpar(){
     Idescricao.value = "";
     Ivalor.value = "";
 };
-
+var i = 0
 formulario.addEventListener("submit", function(event){
     event.preventDefault();
     cadastrar();
+    i++;
+    localStorage.setItem('cadastro++', i);
     limpar();
 });
