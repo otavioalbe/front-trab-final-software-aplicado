@@ -62,7 +62,14 @@ botao.addEventListener('click', function registraReembolso() {
                 "Accept":"application/json",
                 "Content-Type":"application/json"
             }
-        }).then(function (res) { console.log(res)} )
+        }).then(response => {
+            if(response.ok){
+                console.log(response)
+                alert("Reembolso atualizado com sucesso!");
+            }else if(response.status == 404){
+                alert("Reembolso não encontrado! Verifique o ID digitado.")
+            }
+        })
         .catch(function (res) { console.log(res)} )
         
     } else if(pegaAprovado == 'REJECTED'){
@@ -75,11 +82,16 @@ botao.addEventListener('click', function registraReembolso() {
             body: JSON.stringify(
                 pegaMotivo
             )
-        }).then(function (res) { console.log(res)} )
+        }).then(response => {
+            if(response.ok){
+                console.log(response)
+                alert("Reembolso atualizado com sucesso!");
+            }else if(response.status == 404){
+                alert("Reembolso não encontrado! Verifique o ID digitado.")
+            }
+        })
         .catch(function (res) { console.log(res)} )
-        
     }
-    alert("Reembolso atualizado com sucesso!");
     window.location.reload();
 })
 
