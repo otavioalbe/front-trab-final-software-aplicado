@@ -1,8 +1,9 @@
 const formulario = document.querySelector("form");
-const Idescricao = document.querySelector(".descricao");
-const Ivalor = document.querySelector(".valor");
+const Idescricao = document.getElementsByName("descricao")[0];
+const Ivalor = document.getElementsByName("valor")[0];
 
 function cadastrar(){
+    
     fetch("http://localhost:8080/reembolso/solicitar",{
         headers:{
             "Accept":"application/json",
@@ -33,5 +34,6 @@ formulario.addEventListener("submit", function(event){
         return;
     }
     cadastrar();
+    alert("Reembolso cadastrado com sucesso!");
     limpar();
 });

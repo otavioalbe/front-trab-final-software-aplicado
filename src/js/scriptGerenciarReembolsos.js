@@ -64,15 +64,15 @@ botao.addEventListener('click', function registraReembolso() {
                 "Content-Type":"application/json"
             },
             method: 'PUT',
-            body: JSON.stringify({
-                motivoRecusa: pegaMotivo
-            })
+            body: JSON.stringify(
+                pegaMotivo
+            )
         }).then(function (res) { console.log(res)} )
         .catch(function (res) { console.log(res)} )
         
     }
     alert("Reembolso atualizado com sucesso!");
-    window.location.reload;
+    window.location.reload();
 })
 
 function isNumber(n) {
