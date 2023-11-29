@@ -93,6 +93,7 @@ botao.addEventListener('click', function registraReembolso() {
         .catch(function (res) { console.log(res)} )
     }
     window.location.reload();
+    window.location.reload();
 })
 
 function isNumber(n) {

@@ -2,7 +2,6 @@ function carregarReembolsos(){
     fetch('http://localhost:8080/reembolso/buscar?size=100')
     .then(response => response.json())
     .then(reembolsos => {
-        //console.log(reembolsos)
         data = reembolsos.content
         var lista = document.querySelector('#repos')
         for(i in data){
