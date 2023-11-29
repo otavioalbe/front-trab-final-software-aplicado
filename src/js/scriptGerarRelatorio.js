@@ -22,3 +22,25 @@ function carregarReembolsos(){
 }).catch(error => console.log(error))
 }
 carregarReembolsos()
+
+let botao = document.getElementById('btnPesquisar')
+
+botao.addEventListener('click', function registraPesquisa() {
+    let pegaDataInicio = document.getElementById('dataInicio').value
+    let pegaDataFim = document.getElementById('dataFim').value
+    if(pegaDataInicio.trim() == '' || pegaDataFim.trim() == ''){
+        alert("Preencha todos os campos!")
+        return
+    }
+    if(pegaDataInicio > pegaDataFim){
+        alert("Data inicial maior que a data final!")
+        return
+    }
+    localStorage.setItem('dataInicio', pegaDataInicio);
+    localStorage.setItem('dataFim', pegaDataFim);
+    console.log(pegaDataInicio)
+    console.log(pegaDataFim)
+
+    //alert("Pesquisa realizada com sucesso!")
+    window.location.href = 'resultadoPesquisa.html'
+})

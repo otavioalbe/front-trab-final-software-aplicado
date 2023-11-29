@@ -4,17 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='src/css/style.css'>
-        <title>Gerenciar relatório</title>
+        <title>Gerar relatório</title>
     </head>
     <body>
         <header>
-            <h1>Gerenciar relatório</h1>
+            <h1>Gerar relatório</h1>
         </header>
 
             <div class="boxReembolso">
+                <a href="gerente.html">Voltar</a><br><br>
                 <ul id="repos"></ul>                
             </div>
-            
+            <form id="boxReembolsoCadastro">
+                <h2>Pesquisar por período</h2> <br>
+                Digite a data inicial:<br>
+                <input id="dataInicio" class="inputTela" type="date" placeholder="AAAA-MM-DD"><br>
+    
+                
+                Digite a data final:<br>
+                <input id="dataFim" class="inputTela" type="date" placeholder="AAAA-MM-DD">
+                
+
+                <button id="btnPesquisar" onclick="return false">Pesquisar</button>
+                
+                <br><br>
+                <a href="gerente.html">Voltar</a>
+            </form>
         <script src="src/js/scriptGerarRelatorio.js"></script>
     </body>
 </html>

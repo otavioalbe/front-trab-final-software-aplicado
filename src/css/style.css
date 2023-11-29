@@ -149,13 +149,11 @@ button{
     border-bottom: 1px solid #ffffff;
 }
 
-#btnRegistrar{
+#btnRegistrar, #btnPesquisar{
     width: 92%;
 }
-#IDreembolso{
-    width: 88%;
-}
-#motivoReembolso{
+
+#dataInicio, #dataFim, #IDreembolso, #motivoReembolso{
     width: 88%;
 }
 
