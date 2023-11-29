@@ -1,4 +1,4 @@
-function carregarReembolsos(){
+function carregarReembolsosPENDING(){
             fetch('http://localhost:8080/reembolso/buscar?size=100') //+ $('#page').val())
             .then(response => response.json())
             .then(reembolsos => {
@@ -8,6 +8,7 @@ function carregarReembolsos(){
                 for(i in data){
                     console.log(data[i])
                     var objeto = document.createElement('li')
+                    if(reembolsos.content[i].status == 'PENDING'){
                     objeto.innerHTML = JSON.stringify(
                         "<strong>Reembolso "+reembolsos.content[i].id +"</strong>")+ 
                         "<br>Descrição: " + reembolsos.content[i].descricao + 
@@ -19,9 +20,10 @@ function carregarReembolsos(){
                         "<br> - Motivo: "+ reembolsos.content[i].motivoRecusa + "<br><br><hr><br>"
                 lista.appendChild(objeto)
             }
+            }
         }).catch(error => console.log(error))
     }
-carregarReembolsos()
+carregarReembolsosPENDING()
 
 let botao = document.getElementById('btnRegistrar')
 
@@ -37,10 +39,16 @@ botao.addEventListener('click', function registraReembolso() {
         pegaAprovado = input.value;
     }
     });
-    
-    if(pegaID.trim() == '' || pegaMotivo.trim() == '' || pegaAprovado.trim() == ''){
-        alert('Preencha todos os campos!')
-        return
+    if(pegaAprovado == 'REJECTED'){
+        if(pegaID.trim() == '' || pegaMotivo.trim() == '' || pegaAprovado.trim() == ''){
+            alert('Preencha todos os campos!')
+            return
+        }
+    }else{
+        if(pegaID.trim() == '' || pegaAprovado.trim() == ''){
+            alert('Preencha todos os campos!')
+            return
+        }
     }
     if(!(isNumber(pegaID))){
         alert("O ID digitado deve ser apenas números!")
