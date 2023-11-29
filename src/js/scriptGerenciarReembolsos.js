@@ -6,7 +6,7 @@ function carregarReembolsos(){
                 data = reembolsos.content
                 var lista = document.querySelector('#repos')
                 for(i in data){
-                    //console.log(data[i])
+                    console.log(data[i])
                     var objeto = document.createElement('li')
                     objeto.innerHTML = JSON.stringify(
                         "<strong>Reembolso "+reembolsos.content[i].id +"</strong>")+ 
@@ -16,7 +16,7 @@ function carregarReembolsos(){
                         "<br> - Data de solicitação: " + reembolsos.content[i].dataSolicitacao +
                         "<br> - Data de resposta: " + reembolsos.content[i].dataResposta +
                         "<br> - Status: " + reembolsos.content[i].status +
-                        "<br> - Motivo: "+ reembolsos.content[i].motivoRecusa + "<br><br>"
+                        "<br> - Motivo: "+ reembolsos.content[i].motivoRecusa + "<br><br><hr><br>"
                 lista.appendChild(objeto)
             }
         }).catch(error => console.log(error))
@@ -29,10 +29,16 @@ botao.addEventListener('click', function registraReembolso() {
     console.log("Atualizando reembolso")
     let pegaID = document.getElementById('IDreembolso').value
     let pegaMotivo = document.getElementById('motivoReembolso').value
-    let pegaAprovado = document.querySelector(".ar").value
-    console.log(pegaMotivo)
-    console.log(pegaAprovado)
-    if(pegaID == '' || pegaMotivo == ''){
+    let inputsAprovacao = document.querySelectorAll('input[name="aprovar"]');
+    let pegaAprovado = '';
+
+    inputsAprovacao.forEach(function(input) {
+    if (input.checked) {
+        pegaAprovado = input.value;
+    }
+    });
+    
+    if(pegaID.trim() == '' || pegaMotivo.trim() == '' || pegaAprovado.trim() == ''){
         alert('Preencha todos os campos!')
         return
     }
@@ -47,33 +53,26 @@ botao.addEventListener('click', function registraReembolso() {
             headers:{
                 "Accept":"application/json",
                 "Content-Type":"application/json"
-            },
-            body: JSON.stringify({
-                pegaAprovado: pegaAprovado,
-                motivoRecusa: pegaMotivo
-            })
+            }
         }).then(function (res) { console.log(res)} )
         .catch(function (res) { console.log(res)} )
-        pegaID.value = "";
-        pegaAprovado.value = "";
-        pegaMotivo.value = "";
+        
     } else if(pegaAprovado == 'REJECTED'){
         fetch ('http://localhost:8080/reembolso/cancelar/'+pegaID, {
-            method: 'PUT',
             headers:{
                 "Accept":"application/json",
                 "Content-Type":"application/json"
             },
+            method: 'PUT',
             body: JSON.stringify({
-                pegaAprovado: pegaAprovado,
                 motivoRecusa: pegaMotivo
             })
         }).then(function (res) { console.log(res)} )
         .catch(function (res) { console.log(res)} )
-        pegaID.value = "";
-        pegaAprovado.value = "";
-        pegaMotivo.value = "";
-    };
+        
+    }
+    alert("Reembolso atualizado com sucesso!");
+    window.location.reload;
 })
 
 function isNumber(n) {
